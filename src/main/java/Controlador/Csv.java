@@ -163,7 +163,7 @@ public class Csv {
 
             // Verificar si el archivo existe
             if (!archivo.exists()) {
-                JOptionPane.showMessageDialog(null, "El archivo de matrículas no existe.", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "El archivo de libros no existe.", "Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
 
@@ -192,13 +192,61 @@ public class Csv {
             archivo.delete();
             archivoTemp.renameTo(archivo);
             if (libroEncontrado) {
-                JOptionPane.showMessageDialog(null, "El libro de ISBN "     + isbnLibro +
+                JOptionPane.showMessageDialog(null, " El libro de ISBN "     + isbnLibro +
                                                     " fue eliminado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                JOptionPane.showMessageDialog(null, "No se encontró un libro con el ISBN " + isbnLibro, "Advertencia", JOptionPane.WARNING_MESSAGE);
+                JOptionPane.showMessageDialog(null, " No se encontró un libro con el ISBN " + isbnLibro, "Advertencia", JOptionPane.WARNING_MESSAGE);
             }
         } catch (IOException e) {
-            JOptionPane.showMessageDialog(null, "Hubo un error al eliminar el estudiante: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, " Hubo un error al eliminar el libro : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
+
+
+
+    // ===== ELIMINAR REVISTAS CSV =====
+    public static void eliminarRevistasCsv(String issnRevista){
+        try {
+            File archivo = new File(nombreArchivosRevista);
+
+            // Verificar si el archivo existe
+            if (!archivo.exists()) {
+                JOptionPane.showMessageDialog(null, "El archivo de Revistas no existe.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+
+            Scanner lector                  = new Scanner(archivo);
+            File archivoTemp                = new File(nombreArchivoLibros + ".temp");
+            BufferedWriter escritor         = new BufferedWriter(new FileWriter(archivoTemp));
+
+            boolean revistaEncontrada       = false;
+
+
+            while (lector.hasNextLine()) {
+                String linea = lector.nextLine();
+
+
+                if (linea.contains("," + issnRevista + ",")) {
+                    revistaEncontrada = true;
+                } else {
+                    escritor.write(linea);
+                    escritor.newLine();
+                }
+            }
+            lector.close();
+            escritor.close();
+
+            // Eliminar el archivo original y renombrar el temporal
+            archivo.delete();
+            archivoTemp.renameTo(archivo);
+
+            if (revistaEncontrada) {
+                JOptionPane.showMessageDialog(null, " La revista de ISSN " + issnRevista + " fue eliminado correctamente.", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "No se encontró una revista con ISSN " + issnRevista, "Advertencia", JOptionPane.WARNING_MESSAGE);
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error al eliminar la revista : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
 }
