@@ -1,4 +1,4 @@
-package Clases;
+package Controlador;
 
 public class Biblioteca {
 }

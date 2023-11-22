@@ -8,12 +8,11 @@ public class Libro extends MaterialBiblioteca{
 
 
     // ===== CONSTRUCTORES =====
-    public Libro(String ISBN, String edicion) {
-        this.ISBN = ISBN;
-        this.edicion = edicion;
-    }
-
-    public Libro() {
+    public Libro(   String id       , String titulo     , String autor,
+                    boolean estado  , String ISBN       , String edicion) {
+        super(id, titulo, autor, estado);
+        this.ISBN       = ISBN;
+        this.edicion    = edicion;
     }
 
 
