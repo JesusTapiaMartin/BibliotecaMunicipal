@@ -1,4 +1,4 @@
-package vistaTest;
+package Vista;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;

@@ -32,14 +32,19 @@ public class csvRevistas {
 
 
             // ===== ATRIBUTOS =====
-            String issnRevista = nuevaRevista.getISSN();
-            int numeroRevista = nuevaRevista.getNumero();
+            String idRevista        = nuevaRevista.getId();
+            String tituloRevista    = nuevaRevista.getTitulo();
+            String autorRevista     = nuevaRevista.getAutor();
+            boolean estadoRevista   = nuevaRevista.isEstado();
+            String issnRevista      = nuevaRevista.getISSN();
+            int numeroRevista       = nuevaRevista.getNumero();
 
 
             // Agregar datos al final del archivo en modo append
             BufferedWriter escritor = new BufferedWriter(new FileWriter(nombreArchivosRevista, true));
 
-            escritor.write(issnRevista + "," + numeroRevista);
+            escritor.write( idRevista       + "," + tituloRevista   + "," + autorRevista + "," +
+                            estadoRevista   + "," + issnRevista     + "," + numeroRevista);
             // ----- NUEVA LÍNEA DESPUÉS PARA AGREGAR UN ALUMNO -----
             escritor.newLine();
             escritor.close();
@@ -67,12 +72,16 @@ public class csvRevistas {
                 }
                 String[] campos = linea.split(",");
 
-                if (campos.length >= 1) {
-                    String issnRevista      = campos[0].trim();
-                    String numeroRevista    = campos[1].trim();
+                if (campos.length >= 6) {
+                    String idRevista        = campos[0].trim();
+                    String tituloRevista    = campos[1].trim();
+                    String autorRevista     = campos[2].trim();
+                    boolean estadoRevista   = Boolean.parseBoolean(campos[3].trim());
+                    String issnRevista      = campos[4].trim();
+                    int numeroRevista       = Integer.parseInt(campos[5].trim());
 
                     if (filtroIssn == null || issnRevista.equals(filtroIssn)) {
-                        Object[] rowData = {issnRevista, numeroRevista};
+                        Object[] rowData = {idRevista, tituloRevista, autorRevista, estadoRevista, issnRevista, numeroRevista};
                         revistasData.add(rowData);
                     }
                 }

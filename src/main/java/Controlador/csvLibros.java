@@ -32,13 +32,18 @@ public class csvLibros {
 
 
             // ===== ATRIBUTOS LIBRO =====
-            String edicionLibro = nuevoLibro.getEdicion();
-            String isbnLibro = nuevoLibro.getISBN();
+            String  idLibro         = nuevoLibro.getId();
+            String  tituloLibro     = nuevoLibro.getTitulo();
+            String  autorLibro      = nuevoLibro.getAutor();
+            boolean estadoLibro     = nuevoLibro.isEstado();
+            String  edicionLibro    = nuevoLibro.getEdicion();
+            String  isbnLibro       = nuevoLibro.getISBN();
 
 
             // Agregar datos al final del archivo en modo append
             BufferedWriter escritor = new BufferedWriter(new FileWriter(nombreArchivoLibros, true));
-            escritor.write(edicionLibro + "," + isbnLibro);
+            escritor.write( idLibro     + "," + tituloLibro     + "," + autorLibro + "," +
+                            estadoLibro + "," + edicionLibro    + "," + isbnLibro);
 
 
             // ----- NUEVA LÍNEA DESPUÉS PARA AGREGAR UN ALUMNO -----
@@ -69,12 +74,16 @@ public class csvLibros {
 
                 String[] campos = linea.split(",");
 
-                if (campos.length >= 1) {
-                    String isbnLibro    = campos[0].trim();
-                    String edicionLibro = campos[1].trim();
+                if (campos.length >= 6) {
+                    String idLibro      = campos[0].trim();
+                    String tituloLibro  = campos[1].trim();
+                    String autorLibro   = campos[2].trim();
+                    boolean estadoLibro = Boolean.parseBoolean(campos[3].trim());
+                    String isbnLibro    = campos[4].trim();
+                    String edicionLibro = campos[5].trim();
 
                     if (filtroIsbn == null || isbnLibro.equals(filtroIsbn)) {
-                        Object[] rowData = {isbnLibro, edicionLibro};
+                        Object[] rowData = {idLibro, tituloLibro, autorLibro, estadoLibro, isbnLibro, edicionLibro};
                         librosData.add(rowData);
                     }
                 }

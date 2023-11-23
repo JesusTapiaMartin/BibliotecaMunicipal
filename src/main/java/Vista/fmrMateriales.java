@@ -1,8 +1,8 @@
-package vistaTest;
+package Vista;
 
 import javax.swing.*;
 
-public class AñadirMateriales {
+public class fmrMateriales {
     private JTabbedPane tabbedPane1;
     private JPanel panel1;
 }
