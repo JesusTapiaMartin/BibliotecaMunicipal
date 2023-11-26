@@ -3,10 +3,10 @@ package Vista;
 import javax.swing.*;
 
 public class fmrMenu extends JFrame {
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton btnBuscar;
+    private JButton btnMateriales;
     private JPanel jpMenu;
+    private JButton btnSalir;
 
     public fmrMenu(){
         setVisible(true);
@@ -15,5 +15,9 @@ public class fmrMenu extends JFrame {
         setTitle("Menú");
         setContentPane(jpMenu);
 
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 }
