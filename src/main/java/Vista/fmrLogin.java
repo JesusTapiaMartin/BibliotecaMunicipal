@@ -30,7 +30,8 @@ public class fmrLogin extends JFrame{
         btnIngresar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                new fmrMenu();
+                dispose();
             }
         });
 
@@ -39,7 +40,7 @@ public class fmrLogin extends JFrame{
         crearCuentaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(fmrLogin.this, "Su cuenta ha sido registrada");
             }
         });
     }

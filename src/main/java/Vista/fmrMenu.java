@@ -3,15 +3,17 @@ package Vista;
 import javax.swing.*;
 
 public class fmrMenu extends JFrame {
-    private JPanel  Menu;
     private JButton button1;
     private JButton button2;
     private JButton button3;
+    private JPanel jpMenu;
 
     public fmrMenu(){
-        setSize(1024, 768);
+        setVisible(true);
+        setSize(600, 600);
         setLocationRelativeTo(null);
         setTitle("Menú");
-        setContentPane(Menu);
+        setContentPane(jpMenu);
+
     }
 }
