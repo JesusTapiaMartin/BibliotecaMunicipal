@@ -1,5 +1,7 @@
 package Vista;
 
+import Clases.Usuario;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,10 +20,10 @@ public class fmrLogin extends JFrame{
 
 
     public fmrLogin(){
-
-        setSize(1024, 768);
+        setVisible(true);
+        setSize(600, 600);
         setLocationRelativeTo(null);
-        setTitle("Menú");
+        setTitle("Login");
         setContentPane(jpLogin);
 
         // ===== BOTÓN INICIAR SESIÓN =====
