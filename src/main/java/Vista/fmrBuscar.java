@@ -1,6 +1,7 @@
 package Vista;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 
 public class fmrBuscar extends JDialog {
     private JPanel jpBuscar;
@@ -10,13 +11,22 @@ public class fmrBuscar extends JDialog {
     private JTable tblLibros;
     private JTextField txtBuscar;
     private JButton btnDevolver;
+    private JScrollPane jsPane1;
 
     public fmrBuscar() {
+        crearTabla();
         setVisible(true);
         setContentPane(jpBuscar);
         setModal(true);
-        setTitle("Buscar Materiales");
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setTitle("Buscar");
         setSize(600, 600);
     }
+
+
+    private void crearTabla(){
+        tblLibros.setModel(new DefaultTableModel(null, new String[]{"Titulo","Autor","ISBN","ISSN"}));
+    }
+
 
 }
