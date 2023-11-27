@@ -5,6 +5,20 @@ import java.awt.event.*;
 
 public class fmrMateriales extends JDialog {
     private JPanel contentPane;
+    private JTextField txtTituloLibro;
+    private JButton btnAgregarLibro;
+    private JButton btnSalir;
+    private JTextField txtTituloRevista;
+    private JButton btnAgregarRevista;
+    private JTextField txtAutorLibro;
+    private JTextField txtISBN;
+    private JLabel lblTituloLibro;
+    private JLabel lblAutorLibro;
+    private JLabel lblISBN;
+    private JTextField txtAutorRevista;
+    private JTextField txtISSN;
+    private JLabel lblTituloRevista;
+    private JLabel lblISSN;
     private JButton buttonOK;
     private JButton buttonCancel;
 
