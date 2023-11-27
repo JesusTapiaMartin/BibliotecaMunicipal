@@ -4,13 +4,13 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 public class fmrBuscar extends JDialog {
-    private JPanel jpBuscar;
-    private JButton btnPrestar;
-    private JButton btnSalir;
-    private JButton btnBuscar;
-    private JTable tblLibros;
-    private JTextField txtBuscar;
-    private JButton btnDevolver;
+    private JPanel      jpBuscar;
+    private JButton     btnPrestar;
+    private JButton     btnSalir;
+    private JButton     btnBuscar;
+    private JTable      tblLibros;
+    private JTextField  txtBuscar;
+    private JButton     btnDevolver;
     private JScrollPane jsPane1;
 
     public fmrBuscar() {
@@ -24,6 +24,7 @@ public class fmrBuscar extends JDialog {
     }
 
 
+    // ===== TABLA =====
     private void crearTabla(){
         tblLibros.setModel(new DefaultTableModel(null, new String[]{"Titulo","Autor","ISBN","ISSN"}));
     }

@@ -5,10 +5,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class fmrMenu extends JFrame {
-    private JButton btnBuscar;
-    private JButton btnMateriales;
-    private JPanel jpMenu;
-    private JButton btnSalir;
+    private JButton     btnBuscar;
+    private JButton     btnMateriales;
+    private JPanel      jpMenu;
+    private JButton     btnSalir;
 
     public fmrMenu(){
         setVisible(true);
@@ -17,12 +17,17 @@ public class fmrMenu extends JFrame {
         setTitle("Menú");
         setContentPane(jpMenu);
 
+
+        // ===== BOTÓN SALIR =====
         btnSalir.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
             }
         });
+
+
+        // ===== BOTÓN BUSCAR =====
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -30,10 +35,14 @@ public class fmrMenu extends JFrame {
                 dispose();
             }
         });
+
+
+        // ===== BOTÓN MATERIALES =====
         btnMateriales.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                fmrMateriales ventana = new fmrMateriales();
+                ventana.setVisible(true);
             }
         });
     }

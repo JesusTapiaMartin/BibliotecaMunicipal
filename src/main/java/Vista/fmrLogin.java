@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class fmrLogin extends JFrame{
 
     // ===== ATRIBUTOS =====
-    private JPanel jpLogin;
+    private JPanel          jpLogin;
     private JTextField      txtNombre;
     private JLabel          lblTitulo;
     private JPasswordField  txtpContraseña;
@@ -25,6 +25,7 @@ public class fmrLogin extends JFrame{
         setLocationRelativeTo(null);
         setTitle("Login");
         setContentPane(jpLogin);
+
 
         // ===== BOTÓN INICIAR SESIÓN =====
         btnIngresar.addActionListener(new ActionListener() {
