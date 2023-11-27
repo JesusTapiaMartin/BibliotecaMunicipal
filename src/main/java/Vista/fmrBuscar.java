@@ -44,6 +44,7 @@ public class fmrBuscar extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 cargarListadoMateriales(null);
+                limpiarBusqueda();
             }
         });
 
@@ -97,7 +98,14 @@ public class fmrBuscar extends JDialog {
 
     // ========== BUSCAR LIBRO O REVISTA POR NOMBRE ==========
     private void buscarMaterialPorNombre() {
-        String filtro = txtBuscar.getText();
+        String filtro = txtBuscar.getText().toLowerCase();
         cargarListadoMateriales(filtro);
+    }
+
+
+
+    // ===== LIMPIAR BUSQUEDA =====
+    public void limpiarBusqueda(){
+        txtBuscar.setText(null);
     }
 }
