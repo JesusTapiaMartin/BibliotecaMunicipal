@@ -4,4 +4,6 @@
 
 ## * Modelado UML de Visual Paradigm *
 
-![image](https://github.com/JesusTapiaMartin/BibliotecaMunicipal/assets/142508978/55c293ec-95f0-4cea-9d0f-5c2532a08ab0)
+![image](https://github.com/JesusTapiaMartin/BibliotecaMunicipal/assets/142508978/7e9fde1a-3e3d-41db-b12b-d794d2e430b7)
+
+
