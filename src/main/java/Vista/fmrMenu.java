@@ -31,8 +31,8 @@ public class fmrMenu extends JFrame {
         btnBuscar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new fmrBuscar();
-                dispose();
+                fmrBuscar ventana = new fmrBuscar();
+                ventana.setVisible(true);
             }
         });
 

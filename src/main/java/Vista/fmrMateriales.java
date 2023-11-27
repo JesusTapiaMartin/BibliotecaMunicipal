@@ -38,7 +38,7 @@ public class fmrMateriales extends JDialog {
     public fmrMateriales() {
         setModal(true);
         setTitle("Agregar Material");
-        setSize(1000, 700);
+        setSize(900, 200);
         setLocationRelativeTo(null);
         setContentPane(contentPane);
 
