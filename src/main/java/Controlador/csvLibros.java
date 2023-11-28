@@ -129,7 +129,6 @@ public class csvLibros {
             escritor.close();
 
 
-            // Eliminar el archivo original y renombrar el temporal
             archivo.delete();
             archivoTemp.renameTo(archivo);
             if (libroEncontrado) {
